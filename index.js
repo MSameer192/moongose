@@ -10,7 +10,7 @@ const app = express();
 
 
 
-// ========================== ROUTES CONNCENTION CODE 
+// ========================== ROUTES START 
 
 const routes = require('./routes/routes');
 
@@ -19,7 +19,7 @@ app.use(express.urlencoded((extended=true)))
 app.use('/api', routes)
 
 
-// ========================== END ROUTES CONNCENTION CODE 
+// ========================== ROUTES END  
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

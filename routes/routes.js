@@ -1,4 +1,4 @@
-// const Model = require('../models/model');
+const Model = require('../model/model');
 const express = require('express');
 
 const router = express.Router()
@@ -7,8 +7,28 @@ module.exports = router;
 
 
 //Post Method
+
+router.post('/post1', (req, res) => {
+    const data = new Model({
+        name: req.body,
+        age: req.body
+    })
+
+    try {
+        const dataToSave = data.save();
+        res.status(200).json(dataToSave)
+    }
+    catch (error) {
+        res.status(400).json({message: error.message})
+    }
+    
+})
+
+
+
+//Post Method
 router.post('/', (req, res) => {
-    res.json({msg: 'Hello', data: req.body})
+    res.json({ msg: 'Hello', data: req.body })
 })
 
 
@@ -18,7 +38,7 @@ router.post('/post', (req, res) => {
 
 //Get Method
 router.get('/', (req, res) => {
-    res.json({msg: 'Hello'})
+    res.json({ msg: 'Hello' })
 })
 
 
