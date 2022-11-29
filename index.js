@@ -14,6 +14,13 @@ const app = express();
 
 const routes = require('./routes/routes');
 
+// const dataSchema = new mongoose.Schema({
+//     name: String, 
+//     age: Number,
+// });
+
+// const userModel = new mongoose.model('Data', dataSchema)
+
 app.use(express.json());
 app.use(express.urlencoded((extended=true)))
 app.use('/api', routes)
