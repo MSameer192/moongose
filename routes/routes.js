@@ -73,6 +73,8 @@ router.get('/getOne/:id', async (req, res) => {
     }
 })
 
+//Get by Name Method
+
 router.get('/getbyName/:name', async (req, res) => {
    try{
         const data = await Model.findOne({name:req.params.name});
